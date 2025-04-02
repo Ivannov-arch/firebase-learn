@@ -1,21 +1,9 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { z } from "zod";
 import { addDoc, collection } from "firebase/firestore";
 import { auth, db } from "../config/firebase";
+import { Movie } from "../types/movie";
 
-const schema = z
-  .object({
-    id: z.string().optional(),
-    title: z.string(),
-    releaseDate: z.number(),
-    hasAnOscar: z.boolean(),
-    userId: z.string().optional(),
-  })
-  .passthrough();
-
-type newMovie = z.infer<typeof schema>;
-
-const addMovie = async (data: newMovie) => {
+const addMovie = async (data: Movie) => {
   const moviesCollectionRef = collection(db, "movies");
   if (!data) return;
   await addDoc(moviesCollectionRef, {

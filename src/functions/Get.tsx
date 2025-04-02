@@ -1,19 +1,7 @@
-import { z } from "zod";
+import { Movie } from "../types/movie";
 import { queryOptions } from "@tanstack/react-query";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../config/firebase";
-
-const schema = z
-  .object({
-    id: z.string().optional(),
-    title: z.string(),
-    releaseDate: z.number(),
-    hasAnOscar: z.boolean(),
-    userId: z.string().optional(),
-  })
-  .passthrough();
-
-type newMovie = z.infer<typeof schema>;
 
 const moviesCollectionRef = collection(db, "movies");
 
@@ -28,7 +16,7 @@ export const getMovies = async () => {
         releaseDate: Number(docData.releaseDate || 2000),
         hasAnOscar: Boolean(docData.hasAnOscar || false),
       };
-    }) as newMovie[];
+    }) as Movie[];
 
     console.log(filteredData);
     return filteredData;

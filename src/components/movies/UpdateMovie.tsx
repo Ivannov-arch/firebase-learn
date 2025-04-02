@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { useDeleteMovie, useUpdateMovie } from "../../functions/Updates";
+import { Movie } from "../../types/movie";
+type UpdateMovieProps = Pick<Movie, "id" | "title">;
 
-interface Movie {
-  title?: string;
-  id?: string;
-}
-
-export default function UpdateMovie({ movie }: { movie: Movie }) {
+export default function UpdateMovie({ movie }: { movie: UpdateMovieProps }) {
   const [updatedTitle, setUpdatedTitle] = useState<string>("");
   // const [MovieList, setMovieList] = useState<Movie[]>([]);
 
