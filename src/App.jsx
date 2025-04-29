@@ -5,9 +5,8 @@ import "./App.css";
 function App() {
   return (
     <>
-      <div className="flex justify-center mx-auto w-[90vw]">
-        <div className="max-w-[500px] mxau">
-          Firebase learn{" "}
+      <div>
+        <div className="mx-auto max-w-[500px]">
           <img
             className="inline"
             width="24"
@@ -15,9 +14,15 @@ function App() {
             src="https://img.icons8.com/color/48/google-firebase-console.png"
             alt="google-firebase-console"
           />{" "}
-          <br /> <br />
-          <AuthComponent />
-          <Movies />
+          Firebase Movies <br /> <br />
+        </div>
+        <div className="flex flex-col justify-center mx-auto w-[90vw]">
+          <div className="mx-auto max-w-[1000px]">
+            <AuthComponent />
+          </div>
+          <div className="mx-auto max-w-[1000px]">
+            <Movies />
+          </div>
         </div>
       </div>
     </>

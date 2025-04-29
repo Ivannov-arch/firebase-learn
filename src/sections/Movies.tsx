@@ -4,7 +4,7 @@ import MovieList from "../components/movies/MovieList";
 export default function Movies() {
   return (
     <div className="mt-5">
-      <AddMovie />
+      {/* <AddMovie /> */}
       <MovieList />
     </div>
   );

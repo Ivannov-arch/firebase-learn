@@ -38,11 +38,12 @@ export default function AddMovie() {
 
   // Perbaiki nilai userId saat user login/logout
   useEffect(() => {
+    const uid = auth.currentUser?.uid;
     reset((prev) => ({
       ...prev,
-      userId: auth.currentUser?.uid || "",
+      userId: uid || "",
     }));
-  }, [auth.currentUser?.uid, reset]);
+  }, [reset]);
 
   const add = useAddMovie();
   const addMovie: SubmitHandler<newMovie> = async (data: newMovie) => {
@@ -73,7 +74,7 @@ export default function AddMovie() {
         />
         <input
           className="py-2 border rounded"
-          {...register("releaseDate")}
+          {...register("releaseDate", { valueAsNumber: true })}
           type="number"
           placeholder="Release Date..."
         />
@@ -82,7 +83,6 @@ export default function AddMovie() {
             className="border rounded"
             type="checkbox"
             {...register("hasAnOscar")}
-            name="hasAnOscar"
           />{" "}
           <label htmlFor="hasAnOscar">Has an Oscar</label>
         </div>

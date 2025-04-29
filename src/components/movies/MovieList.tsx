@@ -10,9 +10,12 @@ export default function MovieList() {
 
   return (
     <div>
-      <div>
+      <div className="gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {data?.map((movie?) => (
-          <div key={movie && movie?.id} className="my-3 p-3 border rounded">
+          <div
+            key={movie && movie?.id}
+            className="col-span-1 my-3 p-3 border rounded"
+          >
             <h1
               className={` ${movie?.hasAnOscar ? `text-green-500` : `text-red-500`}`}
             >
