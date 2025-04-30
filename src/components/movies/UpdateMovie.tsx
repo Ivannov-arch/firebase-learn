@@ -18,7 +18,7 @@ export default function UpdateMovie({ movie }: { movie: UpdateMovieProps }) {
       <div className="flex flex-col justify-between gap-2">
         <div className="flex gap-2">
           <input
-            className="px-2 py-1 border rounded w-full min-w-0"
+            className="px-2 py-1 border rounded w-full min-w-0 placeholder-stone-500"
             placeholder="new title..."
             onChange={(e) => setUpdatedTitle(e.target.value)}
           />

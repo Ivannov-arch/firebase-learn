@@ -80,13 +80,13 @@ export default function AuthComponent() {
           {!user ? ( // ⬅️ Gunakan state user untuk kondisi UI
             <>
               <input
-                className="py-2 border rounded text-center"
+                className="py-2 border rounded text-center placeholder-stone-500"
                 type="text"
                 placeholder="Email..."
                 onChange={(e) => setEmail(e.target.value)}
               />
               <input
-                className="py-2 border rounded text-center"
+                className="py-2 border rounded text-center placeholder-stone-500"
                 type="password"
                 placeholder="Password..."
                 onChange={(e) => setPassword(e.target.value)}

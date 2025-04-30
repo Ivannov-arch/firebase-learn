@@ -67,20 +67,20 @@ export default function AddMovie() {
         onSubmit={handleSubmit(addMovie)}
       >
         <input
-          className="py-2 border rounded"
+          className="py-2 border rounded placeholder-stone-500"
           {...register("title")}
           type="text"
           placeholder="Movie Title..."
         />
         <input
-          className="py-2 border rounded"
+          className="py-2 border rounded placeholder-stone-500"
           {...register("releaseDate", { valueAsNumber: true })}
           type="number"
           placeholder="Release Date..."
         />
         <div className="mb-2">
           <input
-            className="border rounded"
+            className="border rounded placeholder-stone-500"
             type="checkbox"
             {...register("hasAnOscar")}
           />{" "}
